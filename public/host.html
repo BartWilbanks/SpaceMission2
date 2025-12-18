@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>🚀 Rhys' Space Mission — Host</title><link rel="stylesheet" href="styles.css"/></head><body>
+<div class="topbar"><div class="brand">🛰️ Rhys' Space Mission — Host</div><div class="status" id="status">Not connected</div></div>
+<div class="panel"><div class="joinRow">
+<button id="createBtn" class="accent">Create Room</button><input id="code" placeholder="ROOM CODE"/>
+<button id="joinBtn">Join as Host</button><button id="restartBtn" class="accent">Restart Room</button>
+<div class="roomCodeBox">Room: <span id="roomCode">—</span></div></div>
+<div class="hint">Players open <b>/</b> and host uses <b>/host.html</b>. Final destination is the <b>Big Dipper</b>.</div></div>
+<div class="hostLayout">
+<div class="hostMain"><canvas id="map" width="980" height="520"></canvas><div class="smallHint">Full-map overview</div></div>
+<div class="hostSide"><div class="sideTitle">Leaderboard</div><div id="leaderboard" class="leaderboard"></div>
+<div class="sideTitle" style="margin-top:12px;">Player Views</div><div id="miniGrid" class="miniGrid"></div></div>
+</div>
+<script src="/socket.io/socket.io.js"></script><script src="host.js"></script></body></html>

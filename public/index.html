@@ -1,1 +1,29 @@
-
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>🚀 Rhys' Space Mission</title><link rel="stylesheet" href="styles.css"/></head><body>
+<div class="topbar"><div class="brand">🚀 Rhys' Space Mission</div><div class="status" id="status">Not connected</div></div>
+<div class="panel"><div class="joinRow">
+<input id="code" placeholder="ROOM CODE (e.g., ABC12)"/><input id="name" placeholder="Name (optional)"/>
+<button id="joinBtn">Join</button></div>
+<div class="hud">
+<div><b>Target:</b> <span id="targetName">—</span></div>
+<div><b>Collected:</b> <span id="collectedCount">0</span>/9</div>
+<div><b>Shields:</b> <span id="shieldsCount">3</span></div>
+<button id="landBtn" class="accent" disabled>LAND &amp; COLLECT</button>
+<button id="fireBtn">FIRE</button>
+<button id="tiltBtn">TILT: OFF</button>
+<label class="tiltLabel">Sens <input id="tiltSens" type="range" min="0.5" max="3.0" step="0.1" value="1.6"/></label>
+</div>
+<div class="inventory" id="inventory"></div>
+<div class="invLabel">Final destination: the <b>Big Dipper</b> (moves each restart). Fire: Spacebar/tap. Tilt: enable for mobile steering.</div>
+</div>
+<div class="gameWrap"><div class="canvasWrap">
+<canvas id="game" width="900" height="520"></canvas>
+<div id="winnerOverlay" class="overlay hidden"><div class="overlayCard">
+<div class="overlayTitle">🏁 Mission Complete</div><div class="overlayWinner" id="winnerText">Winner: —</div>
+<div class="overlaySub">Host can restart the room to play again.</div></div></div>
+</div>
+<div class="controls"><div class="hint">Move: WASD/Arrows. Fire: Spacebar/tap. Mobile: pad + FIRE. Optional: enable TILT.</div>
+<div class="pad"><button class="padBtn" data-key="up">▲</button>
+<div class="row"><button class="padBtn" data-key="left">◀</button><button class="padBtn" data-key="down">▼</button><button class="padBtn" data-key="right">▶</button></div></div>
+</div></div>
+<script src="/socket.io/socket.io.js"></script><script src="client.js"></script></body></html>
